@@ -9,7 +9,9 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "ci:nobuild": "npm test && npm run e2e",
-    "ci": "npm run ci:nobuild"
+    "ci:build": "ng t --watch --code-coverage",
+    "ci": "npm run ci:nobuild",
+    "t": "npm run ci:build"
   },
   "private": true,
   "dependencies": {

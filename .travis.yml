@@ -7,9 +7,6 @@ scripts:
 after_success:
   - codecov
 branches:
-  # blocklist
-  except:
-  - /^feature.*/
 # safelist
   only:
   - master

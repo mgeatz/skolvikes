@@ -9,7 +9,7 @@ import {CheckoutComponent} from './checkout/checkout.component';
 import {ConfirmationComponent} from './confirmation/confirmation.component';
 import {HeaderComponent} from './header/header.component';
 import {BasketItemComponent} from './basket-item/basket-item.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [

@@ -1,8 +1,6 @@
 # Skolvikes
 
-[![Build Status](https://travis-ci.org/mgeatz/Polling-App.svg?branch=master)](https://travis-ci.org/mgeatz/skolvikes)
-
-[![codecov](https://codecov.io/gh/mgeatz/skolvikes/branch/master/graph/badge.svg)](https://codecov.io/gh/mgeatz/skolvikes)
+[![Build Status](https://travis-ci.org/mgeatz/Polling-App.svg?branch=master)](https://travis-ci.org/mgeatz/skolvikes) [![codecov](https://codecov.io/gh/mgeatz/skolvikes/branch/master/graph/badge.svg)](https://codecov.io/gh/mgeatz/skolvikes)
 
 
 Author: Michael Geatz 

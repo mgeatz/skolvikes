@@ -1,4 +1,4 @@
-import {Component, NgModule, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import * as moment from 'moment';
 import {InfoService} from './info.service';
 
