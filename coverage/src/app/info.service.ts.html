@@ -1,14 +1,14 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for src/test.ts</title>
+    <title>Code coverage report for src/app/info.service.ts</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="../prettify.css" />
-    <link rel="stylesheet" href="../base.css" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style type='text/css'>
         .coverage-summary .sorter {
-            background-image: url(../sort-arrow-sprite.png);
+            background-image: url(../../sort-arrow-sprite.png);
         }
     </style>
 </head>
@@ -16,13 +16,13 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="../index.html">All files</a> / <a href="index.html">src</a> test.ts
+      <a href="../../index.html">All files</a> / <a href="index.html">src/app</a> info.service.ts
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">75% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>3/3</span>
+        <span class='fraction'>6/8</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -30,21 +30,21 @@
         <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">66.67% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>0/0</span>
+        <span class='fraction'>2/3</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">71.43% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>3/3</span>
+        <span class='fraction'>5/7</span>
       </div>
     </div>
     <p class="quiet">
       Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
     </p>
   </div>
-  <div class='status-line high'></div>
+  <div class='status-line medium'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -65,14 +65,7 @@
 <a name='L17'></a><a href='#L17'>17</a>
 <a name='L18'></a><a href='#L18'>18</a>
 <a name='L19'></a><a href='#L19'>19</a>
-<a name='L20'></a><a href='#L20'>20</a>
-<a name='L21'></a><a href='#L21'>21</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L20'></a><a href='#L20'>20</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -80,32 +73,36 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// This file is required by karma.conf.js and loads recursively all the .spec and framework files
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Injectable } from '@angular/core';
+import {BehaviorSubject, Observable} from 'rxjs';
 &nbsp;
-import 'zone.js/dist/zone-testing';
-import { getTestBed } from '@angular/core/testing';
-import {
-  BrowserDynamicTestingModule,
-  platformBrowserDynamicTesting
-} from '@angular/platform-browser-dynamic/testing';
+@Injectable({
+  providedIn: 'root'
+})
+export class InfoService {
 &nbsp;
-declare const require: any;
+  private currentTheme = new BehaviorSubject&lt;boolean&gt;(false);
+  theme = this.currentTheme.asObservable();
 &nbsp;
-// First, initialize the Angular testing environment.
-getTestBed().initTestEnvironment(
-  BrowserDynamicTestingModule,
-  platformBrowserDynamicTesting()
-);
-// Then we find all the tests.
-const context = require.context('./', true, /\.spec\.ts$/);
-// And load the modules.
-context.keys().map(context);
+  constructor() { }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  changeTheme(</span>theme: boolean) {
+<span class="cstat-no" title="statement not covered" >    console.log('InfoService changeTheme()');</span>
+<span class="cstat-no" title="statement not covered" >    this.currentTheme.next(theme);</span>
+  }
+&nbsp;
+}
 &nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
@@ -115,7 +112,7 @@ context.keys().map(context);
   generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Nov 15 2018 23:00:59 GMT-0600 (CST)
 </div>
 </div>
-<script src="../prettify.js"></script>
+<script src="../../prettify.js"></script>
 <script>
 window.onload = function () {
         if (typeof prettyPrint === 'function') {
@@ -123,7 +120,7 @@ window.onload = function () {
         }
 };
 </script>
-<script src="../sorter.js"></script>
-<script src="../block-navigation.js"></script>
+<script src="../../sorter.js"></script>
+<script src="../../block-navigation.js"></script>
 </body>
 </html>
