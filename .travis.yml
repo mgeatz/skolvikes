@@ -6,12 +6,11 @@ scripts:
   - npm install codecov -g
 after_success:
   - codecov
-# blocklist
 branches:
+  # blocklist
   except:
   - /^feature.*/
 # safelist
-branches:
   only:
   - master
   - stable
