@@ -13,4 +13,3 @@ branches:
 # safelist
   only:
   - master
-  - stable
