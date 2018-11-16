@@ -1,5 +1,10 @@
 language: node_js
+node_js:
+- 8.10.0
 scripts:
-          - npm install codecov -g
+- npm install codecov -g
+- npm install
 after_success:
-          - codecov
+- codecov
+before_script:
+- ng build
