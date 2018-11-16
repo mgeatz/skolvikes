@@ -22,8 +22,8 @@ import {FormsModule} from "@angular/forms";
     BasketItemComponent
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
+    BrowserModule,
     FormsModule
   ],
   providers: [],

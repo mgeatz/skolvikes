@@ -6,6 +6,7 @@ import {ConfirmationComponent} from "./confirmation/confirmation.component";
 
 const routes: Routes = [
   {path: '', component: BasketsComponent, pathMatch: 'full'},
+  {path: 'home', component: BasketsComponent},
   {path: 'checkout', component: CheckoutComponent},
   {path: 'confirmation', component: ConfirmationComponent}
 ];

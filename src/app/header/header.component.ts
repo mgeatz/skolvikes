@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {InfoService} from '../info.service';
+import {InfoService} from "../info.service";
 
 @Component({
   selector: 'app-header',
@@ -12,7 +12,7 @@ export class HeaderComponent implements OnInit {
 
   @Output() pageChangeEvent = new EventEmitter<string>();
 
-  title = 'FX Smart Trade';
+  title = 'SKOL VIKES';
 
   lightTheme: boolean;
 
