@@ -1,8 +1,15 @@
 language: node_js
 node_js:
-- 8.10.0
+  - 8.10.0
 scripts:
 #- npm run ci
-- npm install codecov -g
+  - npm install codecov -g
 after_success:
-- codecov
+  - codecov
+branches:
+  # blocklist
+  except:
+  - /^feature.*/
+# safelist
+  only:
+  - master

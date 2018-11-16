@@ -5,7 +5,7 @@
 [![codecov](https://codecov.io/gh/mgeatz/skolvikes/branch/master/graph/badge.svg)](https://codecov.io/gh/mgeatz/skolvikes)
 
 
-Author: Michael Geatz
+Author: Michael Geatz 
 
 ## Development server
 
