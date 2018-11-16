@@ -1,6 +1,9 @@
 # Skolvikes
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.5.
+[![Build Status](https://travis-ci.org/mgeatz/Polling-App.svg?branch=master)](https://travis-ci.org/mgeatz/skolvikes)
+
+[![codecov](https://codecov.io/gh/mgeatz/skolvikes/branch/master/graph/badge.svg)](https://codecov.io/gh/mgeatz/skolvikes)
+
 
 Author: Michael Geatz
 
@@ -26,4 +29,6 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 ## Further help
 
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.5. 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
