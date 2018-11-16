@@ -3,5 +3,6 @@ node_js:
 - 8.10.0
 scripts:
 - npm install codecov -g
+- ng t --watch=false
 after_success:
 - codecov
