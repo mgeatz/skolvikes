@@ -1,6 +1,7 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {HeaderComponent} from './header.component';
+import {RouterTestingModule} from '@angular/router/testing';
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
@@ -8,9 +9,10 @@ describe('HeaderComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HeaderComponent ]
+      imports: [RouterTestingModule],
+      declarations: [HeaderComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -27,8 +29,12 @@ describe('HeaderComponent', () => {
     expect(component.changeTheme(true)).toBe(false);
   });
 
-  // it('selectedPage should be initially set from parent component', () => {
-  //   const selectedPage = component.getSelectedPage();
-  //   expect(selectedPage).toBeDefined();
-  // });
+  it('selectedPage should be initially set from parent component', () => {
+    setTimeout(() => {
+      const selectedPage = component.getSelectedPage();
+      console.log('SELECTED PAGE ************* ', selectedPage);
+      expect(selectedPage).toBeDefined();
+    }, 500);
+  });
+
 });

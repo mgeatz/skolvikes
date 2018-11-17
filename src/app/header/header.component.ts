@@ -18,18 +18,17 @@ export class HeaderComponent implements OnInit {
 
   pages = [
     'baskets',
-    'checkout',
-    'confirmation'
+    'checkout'
   ];
 
   constructor(private info: InfoService) {
   }
 
+
   ngOnInit() {
-
     this.lightTheme = false;
-
   }
+
 
   changeTheme(lightTheme) {
     this.lightTheme = !lightTheme;
@@ -37,16 +36,15 @@ export class HeaderComponent implements OnInit {
     return this.lightTheme;
   }
 
+
   getSelectedPage() {
     return this.selectedPage;
   }
 
+
   goTo(page) {
-
     console.log('page ', page);
-
     this.selectedPage = page;
-
     this.pageChangeEvent.emit(this.selectedPage);
   }
 

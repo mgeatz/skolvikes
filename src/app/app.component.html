@@ -1,8 +1,6 @@
-<div class="main_body_div" [class.darkTheme]="!theme" [class.lightTheme]="theme">
+<app-header [selectedPage]="selectedPage" (pageChangeEvent)="pageUpdated($event)"></app-header>
 
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
+<div class="main_body_div container">
 
   <router-outlet></router-outlet>
 

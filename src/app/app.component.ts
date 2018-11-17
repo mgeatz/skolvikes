@@ -11,7 +11,7 @@ export class AppComponent implements OnInit {
 
   title = 'skolvikes';
 
-  selectedPage = 'home';
+  selectedPage = 'baskets';
 
   currentTime = moment();
 

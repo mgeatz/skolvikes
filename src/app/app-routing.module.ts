@@ -1,12 +1,12 @@
 import {NgModule} from '@angular/core';
-import {Routes, RouterModule} from '@angular/router';
-import {BasketsComponent} from "./baskets/baskets.component";
-import {CheckoutComponent} from "./checkout/checkout.component";
-import {ConfirmationComponent} from "./confirmation/confirmation.component";
+import {RouterModule, Routes} from '@angular/router';
+import {BasketsComponent} from './baskets/baskets.component';
+import {CheckoutComponent} from './checkout/checkout.component';
+import {ConfirmationComponent} from './confirmation/confirmation.component';
 
 const routes: Routes = [
   {path: '', component: BasketsComponent, pathMatch: 'full'},
-  {path: 'home', component: BasketsComponent},
+  {path: 'baskets', component: BasketsComponent},
   {path: 'checkout', component: CheckoutComponent},
   {path: 'confirmation', component: ConfirmationComponent}
 ];
