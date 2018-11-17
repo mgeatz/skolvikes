@@ -1,5 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
+import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
@@ -12,6 +13,7 @@ import {BasketItemComponent} from './baskets/basket-item/basket-item.component';
 import {FormsModule} from '@angular/forms';
 import {BasketDetailsComponent} from './baskets/basket-details/basket-details.component';
 import {ItemComponent} from './item/item.component';
+
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import {ItemComponent} from './item/item.component';
   imports: [
     AppRoutingModule,
     BrowserModule,
-    FormsModule
+    FormsModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

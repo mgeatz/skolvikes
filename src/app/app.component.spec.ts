@@ -1,39 +1,11 @@
 import {async, TestBed} from '@angular/core/testing';
-import {RouterTestingModule} from '@angular/router/testing';
 import {AppComponent} from './app.component';
-import {HeaderComponent} from './header/header.component';
-import {AppRoutingModule} from './app-routing.module';
-import {BasketsComponent} from './baskets/baskets.component';
-import {BasketCaseComponent} from './baskets/basket-case/basket-case.component';
-import {CheckoutComponent} from './checkout/checkout.component';
-import {ConfirmationComponent} from './confirmation/confirmation.component';
-import {BasketItemComponent} from './baskets/basket-item/basket-item.component';
-import {BasketDetailsComponent} from './baskets/basket-details/basket-details.component';
-import {ItemComponent} from './item/item.component';
-import {BrowserModule} from '@angular/platform-browser';
-import {FormsModule} from '@angular/forms';
+import {Dependencies} from './dependencies';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule,
-        AppRoutingModule,
-        BrowserModule,
-        FormsModule
-      ],
-      declarations: [
-        AppComponent,
-        BasketsComponent,
-        BasketCaseComponent,
-        CheckoutComponent,
-        ConfirmationComponent,
-        HeaderComponent,
-        BasketItemComponent,
-        BasketDetailsComponent,
-        ItemComponent
-      ],
-    }).compileComponents();
+    const dependencies = new Dependencies();
+    dependencies.configure();
   }));
 
   it('should create the app', () => {

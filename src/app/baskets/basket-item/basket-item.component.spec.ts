@@ -1,16 +1,15 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {BasketItemComponent} from './basket-item.component';
+import {Dependencies} from '../../dependencies';
 
 describe('BasketItemComponent', () => {
   let component: BasketItemComponent;
   let fixture: ComponentFixture<BasketItemComponent>;
 
   beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ BasketItemComponent ]
-    })
-    .compileComponents();
+    const dependencies = new Dependencies();
+    dependencies.configure();
   }));
 
   beforeEach(() => {

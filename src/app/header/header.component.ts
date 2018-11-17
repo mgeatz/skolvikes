@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {InfoService} from '../info.service';
+import {faShoppingCart} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-header',
@@ -13,6 +14,8 @@ export class HeaderComponent implements OnInit {
   @Output() pageChangeEvent = new EventEmitter<string>();
 
   title = 'SKOL VIKES';
+
+  faShoppingCart = faShoppingCart;
 
   lightTheme: boolean;
 
@@ -29,24 +32,20 @@ export class HeaderComponent implements OnInit {
     this.lightTheme = false;
   }
 
-
   changeTheme(lightTheme) {
     this.lightTheme = !lightTheme;
-    this.info.changeTheme(this.lightTheme);
+    this.info.setTheme(this.lightTheme);
     return this.lightTheme;
   }
 
-
-  getSelectedPage() {
+  public getSelectedPage() {
     return this.selectedPage;
   }
-
 
   goTo(page) {
     console.log('page ', page);
     this.selectedPage = page;
     this.pageChangeEvent.emit(this.selectedPage);
   }
-
 
 }

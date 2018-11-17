@@ -13,11 +13,11 @@
     <ul class="navbar-nav mr-auto">
       <li class="nav-item"
           [class.active]="page === selectedPage"
-          *ngFor="let page of pages"
-          (click)="goTo(page)">
+          *ngFor="let page of pages">
         <a class="nav-link" [routerLink]="page">{{page}}</a>
       </li>
     </ul>
+    <fa-icon [icon]="faShoppingCart"></fa-icon>
     <!--<button class="btn navbar-text" (click)="changeTheme(lightTheme)">-->
     <!--Toggle Theme-->
     <!--</button>-->

@@ -1,48 +1,28 @@
 <h2>BASKETS</h2>
 <hr>
-
 <div class="row">
   <div class="col-sm-4">
-    <ul class="nav flex-column">
+    <ul class="nav flex-column nav-pills">
       <li class="nav-item">
-        <a class="nav-link active" href="#">Basket One</a>
+        <a class="nav-link"
+           [ngClass]="{active:currentBasket === 1}"
+           (click)="changeBasket(1)">Basket One</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Basket Two</a>
+        <a class="nav-link"
+           [ngClass]="{active:currentBasket === 2}"
+           (click)="changeBasket(2)">Basket Two</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Basket Three</a>
+        <a class="nav-link"
+           [ngClass]="{active:currentBasket === 3}"
+           (click)="changeBasket(3)">Basket Three</a>
       </li>
     </ul>
-
   </div>
   <div class="col-sm-8">
-
-    <div *ngFor="let item of baskets">
-      <div class="list-group-item clearfix">
-        <div class="row">
-          <div class="col-sm-6">
-            <img class="img-responsive"
-                 style="max-height:75px"
-                 [src]="item.imagePath"
-                 alt="{{item.description}}"/>
-          </div>
-          <div class="col-sm-6">
-            <h5 class="list-group-item-heading">{{item.name}}</h5>
-            <h6 class="list-group-item-text">PRICE: <span>$16.00</span></h6>
-            <h6>QUANTITY:
-              <select>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-              </select>
-            </h6>
-          </div>
-        </div>
-      </div>
-      <br>
-    </div>
-
+    <app-basket-item
+      [baskets]="baskets"></app-basket-item>
   </div>
   <!--<app-item></app-item>-->
 </div>

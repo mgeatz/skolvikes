@@ -1,4 +1,5 @@
 export class BasketModel {
+  public basket: number;
   public name: string;
   public description: string;
   public price: number;
@@ -7,9 +8,19 @@ export class BasketModel {
   public imagePath: string;
   public quantity: number;
 
-  constructor(name: string, description: string, price: number, tax: boolean, importTax: boolean, imagePath: string, quantity: number) {
-    this.description = description;
+  constructor(
+    basket: number,
+    name: string,
+    description: string,
+    price: number,
+    tax: boolean,
+    importTax: boolean,
+    imagePath: string,
+    quantity: number) {
+
+    this.basket = basket;
     this.name = name;
+    this.description = description;
     this.price = price;
     this.tax = tax;
     this.importTax = importTax;
