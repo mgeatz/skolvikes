@@ -12,7 +12,9 @@ export class BasketsComponent implements OnInit {
   img = 'http://mgeatz.bandofworthiness.com/images/band_gray-12ef5d276124e2c27cd563a90dc7be86.jpg';
 
   imgSkittles = this.img;
+
   imgWalkman = this.img;
+
   imgPopcorn = this.img;
 
   currentBasket: number;
@@ -35,9 +37,11 @@ export class BasketsComponent implements OnInit {
   }
 
   ngOnInit() {
+    // ensure user start browsing this
+    // route at the top of the page
+    scrollTo(0, 0);
 
     this.currentBasket = 1;
-
   }
 
   changeBasket(basket: number) {
@@ -45,6 +49,5 @@ export class BasketsComponent implements OnInit {
     this.currentBasket = basket;
     this.info.setBasket(basket);
   }
-
 
 }

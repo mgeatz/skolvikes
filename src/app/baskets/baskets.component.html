@@ -1,28 +1,31 @@
 <h2>BASKETS</h2>
 <hr>
+<p>
+  <b>Basket #{{currentBasket}}</b> is currently selected for checkout.
+  Proceed to checkout to place order for <b>Basket #{{currentBasket}}</b>.
+</p>
 <div class="row">
-  <div class="col-sm-4">
+  <div class="col-md-4">
     <ul class="nav flex-column nav-pills">
-      <li class="nav-item">
+      <li class="nav-item"
+          [ngClass]="{amzn_theme_secondary:currentBasket === 1}">
         <a class="nav-link"
-           [ngClass]="{active:currentBasket === 1}"
-           (click)="changeBasket(1)">Basket One</a>
+           (click)="changeBasket(1)">Basket #1</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item"
+          [ngClass]="{amzn_theme_secondary:currentBasket === 2}">
         <a class="nav-link"
-           [ngClass]="{active:currentBasket === 2}"
-           (click)="changeBasket(2)">Basket Two</a>
+           (click)="changeBasket(2)">Basket #2</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item"
+          [ngClass]="{amzn_theme_secondary:currentBasket === 3}">
         <a class="nav-link"
-           [ngClass]="{active:currentBasket === 3}"
-           (click)="changeBasket(3)">Basket Three</a>
+           (click)="changeBasket(3)">Basket #3</a>
       </li>
     </ul>
   </div>
-  <div class="col-sm-8">
+  <div class="col-md-8">
     <app-basket-item
       [baskets]="baskets"></app-basket-item>
   </div>
-  <!--<app-item></app-item>-->
 </div>

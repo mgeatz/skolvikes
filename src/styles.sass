@@ -1,1 +1,76 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import 'styles/colors'
+
+body
+  .amznTheme
+    background-color: $light-gray
+    .main_body_div
+      height: 100%
+      min-height: 100vh
+    nav.navbar
+      background-color: $deep-purple-rgb
+      color: $light
+    a.navbar-brand
+      color: $light
+    .nav-pills
+      .nav-item
+        &:hover
+          cursor: pointer
+          background: $dark-gray
+    .nav-item.active
+      background-color: $pop-orange
+      a
+        color: $deep-purple
+    .nav-item.amzn_theme, .amzn_theme
+      background: $pop-orange
+      color: $deep-purple
+      &:hover
+        cursor: pointer
+        background: $pop-orange
+    .nav-item.amzn_theme_secondary, .amzn_theme_secondary
+      background: $deep-blue-trans
+      color: $deep-purple
+      &:hover
+        cursor: pointer
+        background: $deep-blue-trans
+    li
+      a
+        color: $light
+    hr
+      background: $deep-purple-trans
+    h1
+      color: $pop-pink
+    h2
+      color: $pop-blue
+    input
+      background: $deep-purple-trans
+      color: $light
+      border: 1px solid $pop-purple
+
+.quantity_btn
+  .btn
+    font-size: 10px
+
+.btn
+  border-radius: 10px
+  padding: 7px 20px
+  margin: 5px
+
+.btn-xs, .btn-sm
+  margin: 0px
+  padding: 2px 6px
+
+.txt_alert
+  color: $pop-red
+
+input
+  border-radius: 4px
+  padding: 5px 7px
+  margin: 0 5px
+
+.list-group-item
+  margin: 5px 0
+  hr
+    border: 1px solid $light
+    margin: 0 0 15px 0

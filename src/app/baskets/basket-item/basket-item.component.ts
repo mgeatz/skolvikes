@@ -18,15 +18,16 @@ export class BasketItemComponent implements OnInit {
   ngOnInit() {
     console.log('BasketItemComponent');
 
+    // monitor which basket is currently selected for checkout
     this.info.basket.subscribe(basket => {
       this.currentBasket = basket;
     });
 
   }
 
-  getBasket() {
-    console.log('BasketItemComponent.getBasket');
-    return this.info.basket;
+  changePage(page: string) {
+    console.log('changePage() ', page);
+    this.info.setPage(page);
   }
 
 }

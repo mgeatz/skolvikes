@@ -6,22 +6,24 @@ import {BehaviorSubject} from 'rxjs';
 })
 export class InfoService {
 
-  private currentTheme = new BehaviorSubject<boolean>(false);
-  theme = this.currentTheme.asObservable();
+  initialLocation = location.pathname.split('/')[1];
 
   private currentBasket = new BehaviorSubject<number>(1);
   basket = this.currentBasket.asObservable();
 
+  private currentPage = new BehaviorSubject<string>(this.initialLocation);
+  page = this.currentPage.asObservable();
+
   constructor() { }
 
   setBasket(basket: number) {
-    console.log('InfoService.changeBasket');
+    console.log('InfoService.setBasket');
     return this.currentBasket.next(basket);
   }
 
-  setTheme(theme: boolean) {
-    console.log('InfoService.changeTheme');
-    return this.currentTheme.next(theme);
+  setPage(page: string) {
+    console.log('InfoService.setPage');
+    return this.currentPage.next(page);
   }
 
 }

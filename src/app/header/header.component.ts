@@ -1,6 +1,6 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {InfoService} from '../info.service';
-import {faShoppingCart} from '@fortawesome/free-solid-svg-icons';
+import {faBars, faClipboard, faShoppingCart} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-header',
@@ -9,15 +9,19 @@ import {faShoppingCart} from '@fortawesome/free-solid-svg-icons';
 })
 export class HeaderComponent implements OnInit {
 
-  @Input() selectedPage: string;
+  selectedPage: string;
 
-  @Output() pageChangeEvent = new EventEmitter<string>();
+  lightTheme: boolean;
 
-  title = 'SKOL VIKES';
+  mobile: boolean;
 
   faShoppingCart = faShoppingCart;
 
-  lightTheme: boolean;
+  faBars = faBars;
+
+  faClipboard = faClipboard;
+
+  title = 'SKOL VIKES';
 
   pages = [
     'baskets',
@@ -27,25 +31,21 @@ export class HeaderComponent implements OnInit {
   constructor(private info: InfoService) {
   }
 
-
   ngOnInit() {
     this.lightTheme = false;
+
+    // monitor the selectedPage to toggle active state CSS
+    this.info.page.subscribe(page => {
+      this.selectedPage = page;
+    });
+
+    // make this an observable hooked to the resize event
+    this.mobile = (window.innerWidth < 992);
   }
 
-  changeTheme(lightTheme) {
-    this.lightTheme = !lightTheme;
-    this.info.setTheme(this.lightTheme);
-    return this.lightTheme;
-  }
-
-  public getSelectedPage() {
-    return this.selectedPage;
-  }
-
-  goTo(page) {
-    console.log('page ', page);
-    this.selectedPage = page;
-    this.pageChangeEvent.emit(this.selectedPage);
+  changePage(page: string) {
+    console.log('changePage() ', page);
+    return this.info.setPage(page);
   }
 
 }

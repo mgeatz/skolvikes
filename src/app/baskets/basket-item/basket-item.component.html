@@ -1,42 +1,55 @@
-<button class="btn btn-warning" routerLink="/checkout">CHECKOUT</button>
+<button class="amzn_theme btn btn-warning"
+        routerLink="/checkout"
+        (click)="changePage('checkout')">
+  CHECKOUT
+</button>
 <hr>
 <div *ngFor="let item of baskets">
   <div class="list-group-item clearfix"
        *ngIf="currentBasket === item.basket">
     <div class="row">
-      <div class="col-sm-6">
+
+      <div class="col-4">
         <img class="img-responsive"
-             style="max-height:75px"
+             width="100%"
              [src]="item.imagePath"
              alt="{{item.description}}"/>
       </div>
-      <div class="col-sm-6">
-        <h5 class="list-group-item-heading">{{item.name}}<br>
-          <small><sup>{{item.description}}</sup></small>
-        </h5>
-        <div class="row">
-          <div class="col-xs-6">
-            <h5 class="list-group-item-text">PRICE: $<span>{{item.price}}</span></h5>
-          </div>
-          <div class="col-xs-6">
-            <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-              <div class="btn-group" role="group">
-                <button type="button"
-                        class="btn btn-light btn-sm dropdown-toggle"
-                        data-toggle="dropdown"
-                        aria-haspopup="true"
-                        aria-expanded="false">
-                  QUANTITY
-                </button>
-                <div class="dropdown-menu">
-                  <a class="dropdown-item" href="#">1</a>
-                  <a class="dropdown-item" href="#">2</a>
-                  <a class="dropdown-item" href="#">3</a>
-                  <a class="dropdown-item" href="#">4</a>
+
+      <div class="col-8">
+        <div class="row no-gutters">
+          <div class="col-12">
+            <h5 class="list-group-item-heading">{{item.name}}<br>
+              <small><sup>{{item.description}}</sup></small>
+            </h5>
+            <hr>
+
+            <div class="row no-gutters">
+              <div class="col-xs-6 col-sm-8">
+                <h6 class="list-group-item-text">
+                  <small>Price:</small>
+                  <span class="txt_alert">${{item.price}}</span>
+                </h6>
+              </div>
+              <div class="col-xs-6 col-sm-4">
+                <div class="btn-group quantity_btn" role="group" aria-label="quantity button grouping">
+                  <div class="btn-group" role="group">
+                    <button type="button"
+                            class="btn btn-outline-dark btn-sm dropdown-toggle"
+                            data-toggle="dropdown"
+                            aria-haspopup="true"
+                            aria-expanded="false">
+                      QUANTITY
+                    </button>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item">1</a>
+                    </div>
+                  </div>
+                  <button type="button" class="btn btn-outline-dark btn-xs">1</button>
                 </div>
               </div>
             </div>
-            <button type="button" class="btn btn-light btn-sm">1</button>
+
           </div>
         </div>
       </div>
@@ -44,4 +57,8 @@
   </div>
 </div>
 <hr>
-<button class="btn btn-warning" routerLink="/checkout">CHECKOUT</button>
+<button class="amzn_theme btn btn-warning"
+        routerLink="/checkout"
+        (click)="changePage('checkout')">
+  CHECKOUT
+</button>
