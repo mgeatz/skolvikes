@@ -3,26 +3,29 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 import {Observable} from 'rxjs';
 import {tap} from 'rxjs/operators';
+import {InfoService} from './info.service';
 
-const httpOptions = {
-  headers: new HttpHeaders({
-    'Content-Type': 'application/json',
-    'x-api-key': 'dWRchaZ0sS88OGNK0KyMb3F7SnS7niRy39NREhdK'
-  })
-};
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
 
+
   private productUrl = 'https://mt4e5q55eh.execute-api.us-east-1.amazonaws.com/prod/products?TableName=Basket';  // URL to web api
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private infoService: InfoService) {
   }
 
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      'x-api-key': this.infoService.getKey()
+    })
+  };
+
   getProducts(): Observable<any> {
-    return this.http.get<any>(this.productUrl, httpOptions)
+    return this.http.get<any>(this.productUrl, this.httpOptions)
       .pipe(
         tap( // Log the result or error
           data => {

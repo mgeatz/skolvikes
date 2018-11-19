@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {AfterContentInit, Component} from '@angular/core';
 import {InfoService} from '../info.service';
 import {ProductService} from '../product.service';
 import {Product} from '../product';
@@ -8,16 +8,18 @@ import {Product} from '../product';
   templateUrl: './baskets.component.html',
   styleUrls: ['./baskets.component.sass']
 })
-export class BasketsComponent implements OnInit {
+export class BasketsComponent implements AfterContentInit {
 
   currentBasket: number;
 
   items: Product[];
 
+  hasKey: boolean;
+
   constructor(private infoService: InfoService, private productService: ProductService) {
   }
 
-  ngOnInit() {
+  ngAfterContentInit() {
     this.getProducts();
 
     // ensure user start browsing this
@@ -25,6 +27,12 @@ export class BasketsComponent implements OnInit {
     scrollTo(0, 0);
 
     this.currentBasket = 1;
+
+    // monitor which basket is currently selected for checkout
+    this.infoService.key.subscribe(key => {
+      this.hasKey = key;
+    });
+
 
   }
 

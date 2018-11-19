@@ -1,3 +1,11 @@
+<div *ngIf="!hasKey"
+     class="alert alert-dark"
+     role="alert">
+  <small>
+    <b>IMPORTANT</b>: App data requires authorization. Authenticate by adding this query parameter to the URL, then refresh the browser.
+    <br>
+    <code>?api=< KEY SENT IN EMAIL ></code></small>
+</div>
 <h2>BASKETS</h2>
 <hr>
 <p>
