@@ -32,6 +32,10 @@
               "node_modules/tooltip.js/dist/umd/tooltip.min.js",
               "node_modules/popper.js/dist/umd/popper.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ],
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
             ]
           },
           "configurations": {

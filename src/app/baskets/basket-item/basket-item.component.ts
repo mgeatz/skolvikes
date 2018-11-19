@@ -8,26 +8,27 @@ import {InfoService} from '../../info.service';
 })
 export class BasketItemComponent implements OnInit {
 
-  @Input() baskets: object;
+  @Input() items;
 
   currentBasket: number;
 
-  constructor(private info: InfoService) {
+  constructor(private infoService: InfoService) {
   }
 
   ngOnInit() {
     console.log('BasketItemComponent');
 
     // monitor which basket is currently selected for checkout
-    this.info.basket.subscribe(basket => {
+    this.infoService.basket.subscribe(basket => {
       this.currentBasket = basket;
     });
 
+    // this.basketItems = this.products.Items;
   }
 
   changePage(page: string) {
     console.log('changePage() ', page);
-    this.info.setPage(page);
+    this.infoService.setPage(page);
   }
 
 }

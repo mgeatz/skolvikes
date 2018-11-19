@@ -5,28 +5,45 @@
 
 Author: Michael Geatz 
 
-## Development server
+## Request Invite To Private Repositories
+I can share private github repositories with you, if you'd like to see more elaborate projects. In your email
+to me, please include which of the following projects you'd like temporary access to (based on you specific
+code analysis intentions):
+ 
+- Serverless (Alexa Skill, NodeJS Lambdas)
+- ES6 (EmberJS, Angular, TypeScript)
+- Shell and server
+- NodeJS API (loopback w/ swagger)
+- Pure JavaScript (ES5) algorithm (requires NDA signature)
+- Java Blockchain
+- Java API
+- Adobe Experience Manager
+- CSS library
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Send an email to mgeatz01@gmail.com. Happy to share!
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Application System Architecture
 
-## Build
+- Front End: Angular 7 + Bootstrap grid
+- API: AWS API Gateway (API Key & Usage Plan), with Serverless Resource integration
+- Serverless Resource: AWS Lambda (NodeJS v8.10.0), with Back End access 
+- Back End: AWS DynamoDB
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Project Setup
 
-## Running unit tests
+### Configure
+`git clone https://github.com/mgeatz/skolvikes.git`
+`npm install`
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Project Execution
 
-## Running end-to-end tests
+### Running the Tests
+Run Unit tests: `npm run t`
+Run end-to-end tests: `ng e2e`
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+### Running the App
+Fire up local server: `ng s`
 
-## Further help
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.5. 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
-
+## Using the App
+On the home page, enter the API Key (emailed to you) and click the BEGIN button. 

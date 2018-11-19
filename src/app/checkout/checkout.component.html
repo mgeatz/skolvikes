@@ -1,3 +1,46 @@
-<p>
-  checkout works!
+<h2>CHECKOUT</h2>
+<hr>
+
+<p *ngIf="!purchaseComplete">
+  <b>Basket #{{currentBasket}}</b> is currently selected for checkout.
 </p>
+
+<div *ngIf="purchaseComplete">
+  <p>
+    <b>THANK YOU</b> for purchasing with us.<br>
+    <small>You can print your receipt by clicking the 'Print Receipt' button below.</small>
+  </p>
+  <button class="amzn_theme btn btn-warning"
+          (click)="printReceipt()">
+    PRINT RECEIPT
+  </button>
+</div>
+
+<div id="basketReceipt"
+     class="list-group-item clearfix">
+  <h4 *ngIf="!purchaseComplete">Product List:</h4>
+  <h4 *ngIf="purchaseComplete">Receipt:</h4>
+  <div *ngFor="let item of items">
+    <div *ngIf="currentBasket === item.basket">
+      {{item.quantity}} {{item.name}}: {{item.price | currency}} (tax: {{item.productTax | currency}})
+      <br>
+      <small *ngIf="item.basicTaxDetails">
+        <sup><i>This product includes a {{item.basicTaxDetails | currency}} basic sales tax (10%).</i></sup>
+      </small>
+      <small *ngIf="item.importTaxDetails">
+        <sup><i>This product includes a {{item.importTaxDetails | currency}} additional import duty tax (5%).</i></sup>
+      </small>
+    </div>
+  </div>
+  <hr>
+  <h6>Sales Taxes: {{totalTax | currency}}</h6>
+  <h5>Total: {{totalCost | currency}}</h5>
+</div>
+
+<div *ngIf="!purchaseComplete">
+  <button class="amzn_theme btn btn-warning"
+          (click)="purchasedBasket()">
+    PURCHASE
+  </button>
+</div>
+

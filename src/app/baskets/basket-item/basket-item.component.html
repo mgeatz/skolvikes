@@ -4,7 +4,7 @@
   CHECKOUT
 </button>
 <hr>
-<div *ngFor="let item of baskets">
+<div *ngFor="let item of items">
   <div class="list-group-item clearfix"
        *ngIf="currentBasket === item.basket">
     <div class="row">
@@ -28,7 +28,7 @@
               <div class="col-xs-6 col-sm-8">
                 <h6 class="list-group-item-text">
                   <small>Price:</small>
-                  <span class="txt_alert">${{item.price}}</span>
+                  <span class="txt_alert">{{item.price | currency}}</span>
                 </h6>
               </div>
               <div class="col-xs-6 col-sm-4">

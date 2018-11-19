@@ -4,6 +4,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {BrowserModule} from '@angular/platform-browser';
 import {FormsModule} from '@angular/forms';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
+import {HttpClientModule} from '@angular/common/http';
 
 import {AppComponent} from './app.component';
 import {BasketsComponent} from './baskets/baskets.component';
@@ -21,7 +22,8 @@ export class Dependencies {
         AppRoutingModule,
         BrowserModule,
         FormsModule,
-        FontAwesomeModule
+        FontAwesomeModule,
+        HttpClientModule
       ],
       declarations: [
         AppComponent,
@@ -30,7 +32,7 @@ export class Dependencies {
         ConfirmationComponent,
         HeaderComponent,
         BasketItemComponent
-      ],
+      ]
     }).compileComponents();
   }
 
