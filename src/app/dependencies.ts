@@ -9,7 +9,6 @@ import {HttpClientModule} from '@angular/common/http';
 import {AppComponent} from './app.component';
 import {BasketsComponent} from './baskets/baskets.component';
 import {CheckoutComponent} from './checkout/checkout.component';
-import {ConfirmationComponent} from './confirmation/confirmation.component';
 import {HeaderComponent} from './header/header.component';
 import {BasketItemComponent} from './baskets/basket-item/basket-item.component';
 
@@ -29,7 +28,6 @@ export class Dependencies {
         AppComponent,
         BasketsComponent,
         CheckoutComponent,
-        ConfirmationComponent,
         HeaderComponent,
         BasketItemComponent
       ]

@@ -61,7 +61,7 @@ export class CheckoutComponent implements OnInit {
     console.log(productList);
 
     // send the product through the TaxService calculator
-    let receiptArray = this.taxService.calculateTax(productList);
+    const receiptArray = this.taxService.calculateTax(productList);
     console.log('Updated productList = ', receiptArray);
 
 
@@ -76,9 +76,9 @@ export class CheckoutComponent implements OnInit {
   }
 
   getProducts(): void {
-    this.productService.getProducts().subscribe(data => {
+    this.productService.getProducts(undefined).subscribe(data => {
       // debugger;
-      this.items = data.Items;
+      this.items = data['Items'];
       this.calculateCosts();
     });
   }

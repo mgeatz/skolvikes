@@ -14,8 +14,8 @@ export class InfoService {
   private currentPage = new BehaviorSubject<string>(this.initialLocation);
   page = this.currentPage.asObservable();
 
-  private hasKey = new BehaviorSubject<boolean>(false);
-  key = this.hasKey.asObservable();
+  private currentKey = new BehaviorSubject<string>('');
+  key = this.currentKey.asObservable();
 
   constructor() { }
 
@@ -29,16 +29,16 @@ export class InfoService {
     return this.currentPage.next(page);
   }
 
-  getKey() {
+  configureKey() {
     const key = location.search.split('=')[1];
+
     if (key !== undefined) {
-      this.setKey(true);
+      this.setKey(key);
     }
-    return key;
   }
 
-  setKey(hasKey: boolean) {
-    this.hasKey.next(hasKey);
+  setKey(key: string) {
+    this.currentKey.next(key);
   }
 
 }

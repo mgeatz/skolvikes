@@ -14,7 +14,7 @@ export class BasketsComponent implements AfterContentInit {
 
   items: Product[];
 
-  hasKey: boolean;
+  hasKey = false;
 
   constructor(private infoService: InfoService, private productService: ProductService) {
   }
@@ -28,11 +28,12 @@ export class BasketsComponent implements AfterContentInit {
 
     this.currentBasket = 1;
 
-    // monitor which basket is currently selected for checkout
+    // monitor if user has key
     this.infoService.key.subscribe(key => {
-      this.hasKey = key;
+      if (key.length > 0) {
+        this.hasKey = true;
+      }
     });
-
 
   }
 
@@ -43,9 +44,9 @@ export class BasketsComponent implements AfterContentInit {
   }
 
   getProducts(): void {
-    this.productService.getProducts().subscribe(data => {
+    this.productService.getProducts(undefined).subscribe(data => {
       // debugger;
-      this.items = data.Items;
+      this.items = data['Items'];
     });
   }
 

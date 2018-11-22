@@ -2,13 +2,11 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {BasketsComponent} from './baskets/baskets.component';
 import {CheckoutComponent} from './checkout/checkout.component';
-import {ConfirmationComponent} from './confirmation/confirmation.component';
 
 const routes: Routes = [
   {path: '', component: BasketsComponent, pathMatch: 'full'},
   {path: 'baskets', component: BasketsComponent},
-  {path: 'checkout', component: CheckoutComponent},
-  {path: 'confirmation', component: ConfirmationComponent}
+  {path: 'checkout', component: CheckoutComponent}
 ];
 
 @NgModule({

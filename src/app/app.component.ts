@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {InfoService} from './info.service';
 
 @Component({
   selector: 'app-root',
@@ -7,11 +8,11 @@ import {Component, OnInit} from '@angular/core';
 })
 export class AppComponent implements OnInit {
 
-  constructor() {
+  constructor(private infoService: InfoService) {
   }
 
   ngOnInit() {
-
+    this.infoService.configureKey();
   }
 
 }
